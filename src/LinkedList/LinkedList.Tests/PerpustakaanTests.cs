@@ -23,9 +23,9 @@ public class PerpustakaanTests
 
         var node = new BukuNode(buku);
 
-        Assert.IsTrue(node.Data.Judul.Equals("Test Book"));
-        Assert.IsTrue(node.Data.Penulis.Equals("Test Author"));
-        Assert.IsTrue(node.Data.Tahun == 2021);
+        Assert.IsTrue(node.Buku.Judul.Equals("Test Book"));
+        Assert.IsTrue(node.Buku.Penulis.Equals("Test Author"));
+        Assert.IsTrue(node.Buku.Tahun == 2021);
     }
 
     [TestMethod]
@@ -37,9 +37,9 @@ public class PerpustakaanTests
         var node = new BukuNode(buku1);
         node.Next = new BukuNode(buku2);
 
-        Assert.IsTrue(node.Next.Data.Judul.Equals("Test Book 2"));
-        Assert.IsTrue(node.Next.Data.Penulis.Equals("Test Author"));
-        Assert.IsTrue(node.Next.Data.Tahun == 2022);
+        Assert.IsTrue(node.Next.Buku.Judul.Equals("Test Book 2"));
+        Assert.IsTrue(node.Next.Buku.Penulis.Equals("Test Author"));
+        Assert.IsTrue(node.Next.Buku.Tahun == 2022);
     }
 
     [TestMethod]
