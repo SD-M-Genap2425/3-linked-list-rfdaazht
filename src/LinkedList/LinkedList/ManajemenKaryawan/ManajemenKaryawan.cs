@@ -99,14 +99,21 @@ namespace LinkedList.ManajemenKaryawan
 
         public string TampilkanDaftar()
         {
-            string hasil = "";
+            List<Karyawan> daftarKaryawan = new List<Karyawan>();
             KaryawanNode current = head;
 
             while (current != null) {
-                hasil += $"{current.Karyawan.NomorKaryawan}; {current.Karyawan.Nama}; {current.Karyawan.Posisi}\n";
+                daftarKaryawan.Add(current.Karyawan);
                 current = current.Next;
             }
-            return hasil.Trim();
+
+            daftarKaryawan.Reverse();
+
+            string hasil = "";
+            foreach (var karyawan in daftarKaryawan) {
+                hasil += $"{karyawan.NomorKaryawan}; {karyawan.Nama}; {karyawan.Posisi}\n";
+            }
+            return hasil.TrimEnd();
         }
     }
 }

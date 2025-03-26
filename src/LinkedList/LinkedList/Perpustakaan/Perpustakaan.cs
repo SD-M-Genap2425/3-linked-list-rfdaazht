@@ -88,6 +88,10 @@ namespace LinkedList.Perpustakaan
 
         public string TampilkanKoleksi()
         {
+            if (head == null) {
+                return string.Empty;
+            }
+
             string hasil = "";
             BukuNode current = head;
 
@@ -95,7 +99,8 @@ namespace LinkedList.Perpustakaan
                 hasil += $"\"{current.Buku.Judul}\"; {current.Buku.Penulis}; {current.Buku.Tahun}\n";
                 current = current.Next;
             }
-            return hasil.Trim();
+
+            return hasil.TrimEnd();
         }
     }
 }
